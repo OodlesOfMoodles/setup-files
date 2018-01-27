@@ -5,13 +5,13 @@ After installing Vagrant, run the following command for vagrant to setup your vb
 
 `vagrant plugin install vagrant-vbguest`
 
-## 2. Add local vbox file to Vagrant
+### 1.1 Add local vbox file to Vagrant
 
 The syntax for adding a local vbox to vagrant:
 
 ```vagrant box add [options] <name, url, or path>```
 
-### 2.1 Windows
+#### 1.1.1 Windows
 
 #### This will add the vbox you need with windows:
 *(D:/VagrantBoxes/ is a made up directory, modify this to where you have stored the vbox file)*
@@ -20,22 +20,22 @@ The syntax for adding a local vbox to vagrant:
 
 ```vagrant box add centos7/oodlesOfMoodles file:///D:/VagrantBoxes/centos.oodles.box```
 
-### 2.2 Linux
+#### 1.1.2 Linux
 
-#### This will add the vbox you need with linux:
+##### This will add the vbox you need with linux:
 *(/data/VagrantBoxes/ is a made up directory, modify this to where you have stored the vbox file)*
 
 ```vagrant box add centos7/oodlesOfMoodles /data/VagrantBoxes/centos.oodles.box```
 
-## 3. Reference the newley added vbox in the Vagrantfile
+#### 1.2 Reference the newley added vbox in the Vagrantfile
 
 ...Still need to add stuff here...
 
-## 4. Docker commands
+## 2 Docker
 
 The main Docker commands you may need to know should be used while using root access. Two common ways to do this are to start a command you need elevated permissions with `sudo` another way is to "mask" yourself as root with `sudo su - root`. You will remain logged in as root with the second option until you type `exit`. All docker commands below make the assumption that you have taken care of needing elevated permissions with your chosen method.
 
-### 4.1 Is docker running?
+### 2.1 Is docker running?
 
 Is the daemon running and the docker engine up:
 ```systemctl status docker```
@@ -54,7 +54,7 @@ root@localhost ~]# systemctl status docker
            ├─ 905 /usr/bin/docker-containerd-current -l unix:///var/run/docker/libcontainerd/docker-containerd.sock --shim docker-containerd-shim --metrics-interval=0 --start-time...
            └─1159 /usr/bin/docker-containerd-shim-current 9cb81018f1af190446bd4e0d73fe9e76bfb162cbcdbded1ae50e73ed5cf5a313 /var/run/docker/libcontainerd/9cb81018f1af190446bd4e0d73...
 ```
-### 4.2 What containers are currently running?
+### 2.2 What containers are currently running?
 
 Check what containers are currently running
 
@@ -67,7 +67,7 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 9cb81018f1af        mysql:5.6.39        "docker-entrypoint.sh"   10 minutes ago      Up 2 minutes                            mysql5.6.39
 ```
 
-### 4.3 Learn more about a specific container
+### 2.3 Learn more about a specific container
 
 Maybe you want to learn some stuff about a container:
 
@@ -277,7 +277,7 @@ common response:
 ]
 ```
 
-### 4.4 Docker Container Data Directory
+### 2.4 Docker Container Data Directory
 
 An important part to take note of from the above inspect is:
 
@@ -287,3 +287,30 @@ An important part to take note of from the above inspect is:
         ],
 ```
 This tells us that the container is saving the database files to the `/data` directory inside the VM. Take care to avoid modifying any of these files as you can corrupt the database. The reason this is done is if the container crashes, the data inside the databse will pursist and be available upon the next boot up of the database.
+
+## Apache
+
+### Is the apache server running?
+The VM is setup to bring up the engine upon bootup but you may want to check to see if an issue you are having is caused by the engine being down
+
+`systemctl status httpd`
+
+common response:
+```
+root@localhost ~]# systemctl status httpd
+● httpd.service - The Apache HTTP Server
+   Loaded: loaded (/usr/lib/systemd/system/httpd.service; enabled; vendor preset: disabled)
+   Active: active (running) since Sat 2018-01-27 18:02:07 UTC; 2min 55s ago
+     Docs: man:httpd(8)
+           man:apachectl(8)
+ Main PID: 888 (httpd)
+   Status: "Total requests: 0; Current requests/sec: 0; Current traffic:   0 B/sec"
+   Memory: 4.0K
+   CGroup: /system.slice/httpd.service
+           ├─888 /usr/sbin/httpd -DFOREGROUND
+           ├─923 /usr/sbin/httpd -DFOREGROUND
+           ├─924 /usr/sbin/httpd -DFOREGROUND
+           ├─925 /usr/sbin/httpd -DFOREGROUND
+           ├─926 /usr/sbin/httpd -DFOREGROUND
+           └─927 /usr/sbin/httpd -DFOREGROUND
+```
