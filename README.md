@@ -51,15 +51,20 @@ centos/7            (virtualbox, 1801.02)
 centos7/oodlesBase  (virtualbox, 0)
 mmarum/sugar7-php56 (virtualbox, 1.0.1)
 ```
-
-#### 1.2 Setting up your Vargrant box
-
+### 1.2 Download the code base
 1. Create new Directory for your vagrant box and repo files
-2.  `vagrant init` will create a new file called "Vagrantfile" for you
-3. Edit the new Vagrantfile
-⋅⋅1. Highlight all lines in the file and delete
-⋅⋅2. Paste in the Vagrantfile contents from the setup repo
-⋅⋅3. edit the line with the following `config.vm.box = "centos/7"` and replace with the name of the new box name you previously added to vagrant. example: `config.vm.box = "centos7/oodlesBase7"`
+2. `git clone https://github.com/OodlesOfMoodles/moodle.git .`
+3. Get you favorite beverage and kick you feet up, this is a large download
+4. Once download is complete, go to 1.3
+
+#### 1.3 Setting up your Vargrant box
+
+1.  `vagrant init` will create a new file called "Vagrantfile" for you
+2. Edit the new Vagrantfile
+   1. Highlight all lines in the file and delete
+   2. Paste in the Vagrantfile contents from the setup repo
+   3. edit the line with the following `config.vm.box = "centos/7"` and replace with the name of the new box name you previously added to vagrant. example: `config.vm.box = "centos7/oodlesBase"`
+3. `vagrant up`
 
 ## 2 Docker
 
