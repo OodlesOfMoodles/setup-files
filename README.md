@@ -27,9 +27,39 @@ The syntax for adding a local vbox to vagrant:
 
 ```vagrant box add centos7/oodlesOfMoodles /data/VagrantBoxes/centos.oodles.box```
 
-#### 1.2 Reference the newley added vbox in the Vagrantfile
+#### 1.1.3 Vagrant has added the box to Virtualbox
 
-...Still need to add stuff here...
+This is what that command shouly yeild for you when entered correctly
+
+```
+yeep@derp Vagrant]$ vagrant box add centos7/oodlesBase centos.oodlesBASE.box
+==> box: Box file was not detected as metadata. Adding it directly...
+==> box: Adding box 'centos7/oodlesBase' (v0) for provider: 
+    box: Unpacking necessary files from: file:///home/yeep/Vagrant/centos.oodlesBASE.box
+==> box: Successfully added box 'centos7/oodlesBase' (v0) for 'virtualbox'!
+```
+#### 1.1.4 Did that work?
+
+Check to see if Vagrant sees your new box as a viable option
+
+`vagrant box list`
+
+```
+[yeep@derp Vagrant]$ vagrant box list
+centos/7            (virtualbox, 1801.01)
+centos/7            (virtualbox, 1801.02)
+centos7/oodlesBase  (virtualbox, 0)
+mmarum/sugar7-php56 (virtualbox, 1.0.1)
+```
+
+#### 1.2 Setting up your Vargrant box
+
+1. Create new Directory for your vagrant box and repo files
+2.  `vagrant init` will create a new file called "Vagrantfile" for you
+3. Edit the new Vagrantfile
+⋅⋅1. Highlight all lines in the file and delete
+⋅⋅2. Paste in the Vagrantfile contents from the setup repo
+⋅⋅3. edit the line with the following `config.vm.box = "centos/7"` and replace with the name of the new box name you previously added to vagrant. example: `config.vm.box = "centos7/oodlesBase7"`
 
 ## 2 Docker
 
@@ -69,7 +99,11 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 
 ### 2.3 Learn more about a specific container
 
-Maybe you want to learn some stuff about a container:
+Maybe you want to learn some stuff about a container, they sytax is:
+
+```docker inspect <container name || container id> ```
+
+so...
 
 ```docker inspect mysql5.6.39```
 
