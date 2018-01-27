@@ -13,13 +13,17 @@ The syntax for adding a local vbox to vagrant:
 
 ### 2.1 Windows
 
-This will add the vbox you need with windows:
+#### This will add the vbox you need with windows:
+*(D:/VagrantBoxes/ is a made up directory, modify this to where you have stored the vbox file)*
+
+**The / is typically used in linux and may seem incorrect for windows. Vagrant expects the directory references in a linux like format**
 
 ```vagrant box add centos7/oodlesOfMoodles file:///D:/VagrantBoxes/centos.oodles.box```
 
 ### 2.2 Linux
 
-This will add the vbox you need with linux:
+#### This will add the vbox you need with linux:
+*(/data/VagrantBoxes/ is a made up directory, modify this to where you have stored the vbox file)*
 
 ```vagrant box add centos7/oodlesOfMoodles /data/VagrantBoxes/centos.oodles.box```
 
