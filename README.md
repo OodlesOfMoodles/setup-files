@@ -72,7 +72,7 @@ ubuntu-16.04/oodlesOfMoodles  (virtualbox, 0)
 5. Get you favorite beverage and kick you feet up, this is a large download
 6. Once download is complete, go to 1.3
 
-#### 1.4 Setting up your Vargrant box
+### 1.4 Setting up your Vargrant box
 
 1.  `vagrant init` will create a new file called "Vagrantfile" for you
 2. Edit the new Vagrantfile
