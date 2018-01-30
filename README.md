@@ -80,9 +80,9 @@ ubuntu-16.04/oodlesOfMoodles  (virtualbox, 0)
    2. Paste in the Vagrantfile contents from the setup repo for the file that matches your OS
 3. `vagrant up`
 
-### 2 Databases
+## 2 Databases
 
-#### 2.1 MySQL
+### 2.1 MySQL
 
 You can connect to you virtual machine from the outside if you choose with a 3rd party mysql client like mysql workbench
 
@@ -96,7 +96,7 @@ From within the virtual machine:
     > mysql -u root -p
     Enter password: [Type in root]
 
-#### 2.1.1 Create Database in mySQL
+### 2.1.1 Create Database in mySQL
 *Two databases have already been created in mySQL, they are named: "moodle" and "moodle-core"*
 
 Connect to MySQL using one of the methods mentioned above, then execute the following SQL:
@@ -106,7 +106,7 @@ Connect to MySQL using one of the methods mentioned above, then execute the foll
 Replace `database-name` with the database name you would like to create.
 
 
-#### 2.2 PostgreSQL
+### 2.2 PostgreSQL
 
 To connect to the default database to install Moodle use the following connection details inside config.php:
 
@@ -126,7 +126,7 @@ To access Postresql from the CLI:
     > vagrant ssh
     > psql -U postgres
 
-### 3 Data Directory
+## 3 Data Directory
 Moodle requires a "data directory" for file uploads to be saved in.
 The Moodle data directories can be created under the following directories:
 
@@ -149,19 +149,19 @@ Example of how to create a new one, use the following commands:
 
 Replace `dirname` with the directory name you would like to create.
 
-### 4 Run Moodle
+## 4 Run Moodle
 
-#### 4.1 Download source code
+### 4.1 Download source code
 *This should already be done from step 1*
 First, clone the Moodle repository into `www/moodle` directory.
 
 `git clone git://github.com/moodle/moodle.git www/moodle`
 
-#### 4.2 Create A Database
+### 4.2 Create A Database
 Next, create a database and data directory for the site.  Follow
 the steps in above sections to do this.
 
-#### 4.3 Use the web based Moodle installer
+### 4.3 Use the web based Moodle installer
 Lastly, go to moodle.test in your browser and follow the instructions to install Moodle.
 
 Note: you can install a second Moodle site into `www/core-moodle`
@@ -172,7 +172,7 @@ and install the core version of Moodle in `www/core-moodle`.
 Also note: the site configs for these directories are in `/etc/nginx/sites-enabled`
 where you can add new sites or modify existing ones.
 
-### 5 How to use XDebug
+## 5 How to use XDebug
 
 You must install a XDebug extension in your browser and turn on debugging in the browser.
 Then in an IDE like PHPStorm, you can listen for debug connections.
