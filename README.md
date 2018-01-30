@@ -1,7 +1,7 @@
 # System setup documentation
 
 ## 1. Virtualbox Guest Additions
-After installing Vagrant, run the following command for vagrant to setup your vbguest additions. This is required to be able to sync to /var/www/html
+After installing Vagrant, run the following command for vagrant to setup your vbguest additions. **This is required to be able to sync to /var/www/html inside the VM**
 
 `vagrant plugin install vagrant-vbguest`
 
@@ -29,7 +29,7 @@ The syntax for adding a local vbox to vagrant:
 
 #### 1.1.3 Vagrant has added the box to Virtualbox
 
-This is what that command shouly yeild for you when entered correctly
+This is what that command should yeild for you, when entered correctly
 
 ```
 yeep@derp Vagrant]$ vagrant box add centos7/oodlesBase centos.oodlesBASE.box
@@ -46,12 +46,10 @@ Check to see if Vagrant sees your new box as a viable option
 
 ```
 [yeep@derp Vagrant]$ vagrant box list
-centos/7            (virtualbox, 1801.01)
 centos/7            (virtualbox, 1801.02)
 centos7/oodlesBase  (virtualbox, 0)
-mmarum/sugar7-php56 (virtualbox, 1.0.1)
 ```
-### 1.2 Download the code base
+### 1.2 Download the source code for the project
 1. Create new Directory for your vagrant box and repo files
 2. `git clone https://github.com/OodlesOfMoodles/moodle.git .`
 3. Get you favorite beverage and kick you feet up, this is a large download
@@ -68,7 +66,7 @@ mmarum/sugar7-php56 (virtualbox, 1.0.1)
 
 ## 2 Docker
 
-The main Docker commands you may need to know should be used while using root access. Two common ways to do this are to start a command you need elevated permissions with `sudo` another way is to "mask" yourself as root with `sudo su - root`. You will remain logged in as root with the second option until you type `exit`. All docker commands below make the assumption that you have taken care of needing elevated permissions with your chosen method.
+The main Docker commands you may need to know should be used while using root access. Two common ways to do this are to start a command you need elevated permissions with `sudo` another way is to "mask" yourself as root with `sudo su - root`. You will remain logged in as root with the second option until you type `exit`. All docker commands (and command begining with "docker") below make the assumption that you have taken care of needing elevated permissions with your chosen method.
 
 ### 2.1 Is docker running?
 
