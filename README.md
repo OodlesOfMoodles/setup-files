@@ -96,7 +96,7 @@ From within the virtual machine:
     > mysql -u root -p
     Enter password: [Type in root]
 
-### 2.1.1 Create Database in mySQL
+#### 2.1.1 Create Database in mySQL
 *Two databases have already been created in mySQL, they are named: "moodle" and "moodle-core"*
 
 Connect to MySQL using one of the methods mentioned above, then execute the following SQL:
