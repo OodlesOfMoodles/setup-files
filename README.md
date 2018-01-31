@@ -68,6 +68,7 @@ ubuntu-16.04/oodlesOfMoodles  (virtualbox, 0)
 |       +-- <Moodle Git repo files here>
 ```
 3. Clone the Moodle Repo into the moodle directory (command run from inside the moodle directory) 
+
 `git clone https://github.com/OodlesOfMoodles/moodle.git .
 4. OPTIONAL - Clone the Moodle Repo into 'core-moodle' so you have an unmodified working version to compare with your changed files
 5. Get you favorite beverage and kick you feet up, this is a large download
