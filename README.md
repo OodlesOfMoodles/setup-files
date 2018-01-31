@@ -184,3 +184,26 @@ To profile a page, do the following:
 
 1. Add XDEBUG_PROFILE=1 to your URL.
 2. Refresh/rerun the page to generate the profile.
+
+
+## 6 Vagrant box interaction
+
+### 6.1 SSH connection
+
+To enter the Vagrant box via ssh connection simply type
+`vagrant ssh`
+in the directory where you ran the `vagrant up` command
+
+To leave the ssh connection type `exit` while inside the box. 
+
+### 6.2 Shut down
+
+To shut down the vagrant box type:
+`vagrant halt`
+
+### 6.3 Destroy
+
+Sometimes your environment gets so out of control that you just need to start over. Go to the directory where your vagrant box is running and type:
+`vagrant destory`
+Your Vagrantfile should still exist, and you should be able to start over with a `vagrant up` (no `vagrant init` needed if the Vagrantfile persists)
+
