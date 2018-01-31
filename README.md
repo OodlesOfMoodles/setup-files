@@ -69,7 +69,8 @@ ubuntu-16.04/oodlesOfMoodles  (virtualbox, 0)
 ```
 3. Clone the Moodle Repo into the moodle directory (command run from inside the moodle directory) 
 
-`git clone https://github.com/OodlesOfMoodles/moodle.git .
+    `git clone https://github.com/OodlesOfMoodles/moodle.git .`
+
 4. OPTIONAL - Clone the Moodle Repo into 'core-moodle' so you have an unmodified working version to compare with your changed files
 5. Get you favorite beverage and kick you feet up, this is a large download
 6. Once download is complete, go to 1.4
@@ -164,7 +165,7 @@ Next, create a database and data directory for the site.  Follow
 the steps in above sections to do this.
 
 ### 4.3 Use the web based Moodle installer
-Lastly, go to moodle.test in your browser and follow the instructions to install Moodle.
+Lastly, go to [moodle.test](http://moodle.test) in your browser and follow the instructions to install Moodle.
 
 Note: you can install a second Moodle site into `www/core-moodle`
 and access it via [core-moodle.test](http://core-moodle.test). For example,
