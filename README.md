@@ -210,3 +210,10 @@ Sometimes your environment gets so out of control that you just need to start ov
 
 Your Vagrantfile should still exist, and you should be able to start over with a `vagrant up` (no `vagrant init` needed if the Vagrantfile persists)
 
+
+### 7 mySQL Dump script important info
+
+If you use the dump script to reload your mySQL db, you will need this
+
+user: Admin
+pass: Password1!
