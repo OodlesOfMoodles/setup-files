@@ -205,6 +205,8 @@ To shut down the vagrant box type:
 ** Note: this will not delete your shared directory (where the source code is) but it will delete all data in your current database and require a reinstall of moodle**
 
 Sometimes your environment gets so out of control that you just need to start over. Go to the directory where your vagrant box is running and type:
+
 `vagrant destory`
+
 Your Vagrantfile should still exist, and you should be able to start over with a `vagrant up` (no `vagrant init` needed if the Vagrantfile persists)
 
