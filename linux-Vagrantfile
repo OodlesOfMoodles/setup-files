@@ -30,7 +30,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # Customize virtual machine.
   config.vm.provider "virtualbox" do |vb|
-    vb.customize ["modifyvm", :id, "--memory", "8192"]
-    vb.customize ["modifyvm", :id, "--name", "moodle-dev-example"]
+    vb.customize ["modifyvm", :id, "--memory", "4096"]
   end
 end
