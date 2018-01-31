@@ -202,6 +202,7 @@ To shut down the vagrant box type:
 `vagrant halt`
 
 ### 6.3 Destroy
+** Note: this will not delete your shared directory (where the source code is) but it will delete all data in your current database and require a reinstall of moodle**
 
 Sometimes your environment gets so out of control that you just need to start over. Go to the directory where your vagrant box is running and type:
 `vagrant destory`
