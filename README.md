@@ -127,6 +127,7 @@ To create a new database:
 To access Postresql from the CLI:
 
     > vagrant ssh
+    > sudo su - root
     > psql -U postgres
 
 ## 3 Data Directory
